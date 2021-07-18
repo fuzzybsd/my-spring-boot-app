@@ -1,4 +1,4 @@
-# Spring Boot Apolication with Docker
+# Spring Boot Application with Docker
 
 ## How to build project and push images
 ```
