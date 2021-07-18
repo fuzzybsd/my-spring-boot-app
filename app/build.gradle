@@ -29,7 +29,7 @@ dependencies {
 }
 
 docker {
-    name "hub.docker.com/fuzzybsd/my-spring-boot-app:${project.version}"
+    name "fuzzybsd/my-spring-boot-app:${project.version}"
     dockerfile file('Dockerfile')
     files bootJar.archiveFile.get()
     buildArgs(['JAR_FILE': "${bootJar.archiveFileName.get()}"])  
