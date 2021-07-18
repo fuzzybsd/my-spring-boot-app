@@ -1,10 +1,7 @@
-# EXAMPLE FOR SPRING BOOT APPLICATION WITH DOCKER
+# Spring Boot Apolication with Docker
 
-## HOW TO BUILD PROJECT
-`$ ./gradlew clean build`
-
-## HOW TO BUILD DOCKER IMAGE
-`$ ./gradlew docker`
-
-## HOW TO PUSH DOCKER IMAGE TO DOCKER HUB
-`$ ./gradlew dockerPush`
+## How to build project and push images
+```
+$ docker login
+$ ./gradlew clean build dockerPush
+```
