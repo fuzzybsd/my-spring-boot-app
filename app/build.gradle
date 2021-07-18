@@ -31,6 +31,10 @@ dependencies {
 docker {
     name "fuzzybsd/my-spring-boot-app:${project.version}"
     dockerfile file('Dockerfile')
-    files bootJar.archiveFile.get()
-    buildArgs(['JAR_FILE': "${bootJar.archiveFileName.get()}"])
+    files bootJar.archiveFile.get(), 'jmx_prometheus_javaagent-0.16.1.jar', 'jmx_prometheus_config.yaml'
+    buildArgs([
+        'JAR_FILE': "${bootJar.archiveFileName.get()}", 
+        'JMX_EXPORTER_JAR': "./jmx_prometheus_javaagent-0.16.1.jar",
+        'JMX_EXPORTER_CONFIG': "jmx_prometheus_config.yaml"
+    ])
 }
