@@ -1,2 +1,10 @@
-# HOW TO BUILD
-$ ./gradlew clean build docker dockerPush
+# EXAMPLE FOR SPRING BOOT APPLICATION WITH DOCKER
+
+## HOW TO BUILD PROJECT
+`$ ./gradlew clean build`
+
+## HOW TO BUILD DOCKER IMAGE
+`$ ./gradlew docker`
+
+## HOW TO PUSH DOCKER IMAGE TO DOCKER HUB
+`$ ./gradlew dockerPush`
