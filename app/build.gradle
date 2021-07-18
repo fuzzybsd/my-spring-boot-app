@@ -11,6 +11,7 @@ plugins {
     id 'org.springframework.boot' version '2.5.2'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 	id 'java'
+    id 'com.palantir.docker' version '0.27.0'
 }
 
 group = 'my.spring.boot.app'
@@ -25,4 +26,11 @@ repositories {
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+docker {
+    name "hub.docker.com/fuzzybsd/my-spring-boot-app:${project.version}"
+    dockerfile file('Dockerfile')
+    files bootJar.archiveFile.get()
+    buildArgs(['JAR_FILE': "${bootJar.archiveFileName.get()}"])  
 }
